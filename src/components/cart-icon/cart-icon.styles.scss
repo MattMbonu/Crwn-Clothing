@@ -10,6 +10,14 @@
   .shopping-icon {
     width: 2.4rem;
     height: 2.4rem;
+    transition: all 0.2s;
+    &:hover {
+      transform: translateY(-3px);
+      box-shadow: 0.5rem 1rem 2rem rgba($color: #777, $alpha: 0.3);
+    }
+    &:active {
+      transform: translateY(0px);
+    }
   }
 
   .item-count {

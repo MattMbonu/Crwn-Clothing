@@ -10,6 +10,16 @@
     width: 7rem;
     padding: 2.5rem;
   }
+  .logo {
+    transition: all 0.2s;
+    &:hover {
+      transform: translateY(-3px);
+      box-shadow: 0.5rem 1rem 2rem rgba($color: #777, $alpha: 0.3);
+    }
+    &:active {
+      transform: translateY(0px);
+    }
+  }
 
   .options {
     font-size: 1.6rem;
@@ -25,6 +35,14 @@
     .option {
       padding: 1rem 1.5rem;
       cursor: pointer;
+      transition: all 0.2s;
+      &:hover {
+        transform: translateY(-3px);
+        box-shadow: 0.5rem 1rem 2rem rgba($color: #777, $alpha: 0.3);
+      }
+      &:active {
+        transform: translateY(0px);
+      }
     }
   }
 }
