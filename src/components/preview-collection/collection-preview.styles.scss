@@ -6,6 +6,20 @@
   .title {
     font-size: 2.8rem;
     margin-bottom: 2.5rem;
+
+    span {
+      display: inline-block;
+      width: 10rem;
+      cursor: pointer;
+      transition: all 0.2s;
+      &:hover {
+        transform: translateY(-3px);
+        box-shadow: 0.5rem 1rem 2rem rgba($color: #777, $alpha: 0.3);
+      }
+      &:active {
+        transform: translateY(0px);
+      }
+    }
   }
 
   .preview {
