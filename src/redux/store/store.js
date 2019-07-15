@@ -6,7 +6,12 @@ import logger from "redux-logger";
 import rootReducer from "../reducers";
 
 const initialState = {};
-const middleware = [thunk, logger];
+const middleware = [thunk];
+
+if (process.env.NODE_ENV === "development") {
+  middleware.push(logger);
+}
+
 export const store = createStore(
   rootReducer,
   initialState,
