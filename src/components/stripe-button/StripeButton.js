@@ -1,12 +1,14 @@
 import React from "react";
 import StripeCheckout from "react-stripe-checkout";
+import { connect } from "react-redux";
+import { setAlert } from "../../redux/actions/alert";
 
-const StripeButton = ({ price }) => {
+const StripeButton = ({ price, setAlert }) => {
   const priceForStripe = price * 100;
   const publicKey = "pk_test_uFRnaCL9WThxBHFBlWoGpVdw009P008GjZ";
   const onToken = token => {
     console.log(token);
-    alert("payment successful");
+    setAlert("payment successful", "success", 3000);
   };
   return (
     <StripeCheckout
@@ -25,4 +27,7 @@ const StripeButton = ({ price }) => {
   );
 };
 
-export default StripeButton;
+export default connect(
+  null,
+  { setAlert }
+)(StripeButton);

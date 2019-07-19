@@ -3,8 +3,9 @@ import "./collection-item.styles.scss";
 import CustomButton from "../button/CustomButton";
 import { connect } from "react-redux";
 import { addCartItem } from "../../redux/actions/cart";
+import { setAlert } from "../../redux/actions/alert";
 
-const CollectionItem = ({ item, addCartItem }) => {
+const CollectionItem = ({ item, addCartItem, setAlert }) => {
   const { name, price, imageUrl } = item;
   return (
     <div className="collection-item">
@@ -13,7 +14,13 @@ const CollectionItem = ({ item, addCartItem }) => {
         <span className="name">{name}</span>
         <span className="price">{price}</span>
       </div>
-      <CustomButton onClick={() => addCartItem(item)} inverted>
+      <CustomButton
+        onClick={() => {
+          addCartItem(item);
+          setAlert("Item Added!", "success", 1000);
+        }}
+        inverted
+      >
         Add to Cart
       </CustomButton>
     </div>
@@ -22,5 +29,5 @@ const CollectionItem = ({ item, addCartItem }) => {
 
 export default connect(
   null,
-  { addCartItem }
+  { addCartItem, setAlert }
 )(CollectionItem);

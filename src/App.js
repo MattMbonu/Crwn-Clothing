@@ -4,7 +4,7 @@ import SignInandSignUp from "./pages/sigin-signup/SignInandSignUp";
 import HomePage from "./pages/homepage/HomePage";
 import Shop from "./pages/shop/Shop";
 import CheckoutPage from "./pages/checkout/CheckoutPage";
-
+import Alert from "./components/alert/Alert";
 import "./App.css";
 import { Route, Switch, Redirect } from "react-router-dom";
 import { createStructuredSelector } from "reselect";
@@ -40,6 +40,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <Header />
+        <Alert />
         <Switch>
           <Route exact path="/" component={HomePage} />
           <Route path="/shop" component={Shop} />
