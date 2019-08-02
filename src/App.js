@@ -5,7 +5,7 @@ import HomePage from "./pages/homepage/HomePage";
 import Shop from "./pages/shop/Shop";
 import CheckoutPage from "./pages/checkout/CheckoutPage";
 import Alert from "./components/alert/Alert";
-import "./App.css";
+import { GlobalStyles } from "./global.styles";
 import { Route, Switch, Redirect } from "react-router-dom";
 import { createStructuredSelector } from "reselect";
 import { selectCurrentUser } from "./redux/selector/user.selectors";
@@ -39,6 +39,7 @@ class App extends React.Component {
     console.log(this.state);
     return (
       <div className="App">
+        <GlobalStyles />
         <Header />
         <Alert />
         <Switch>
