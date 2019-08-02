@@ -24,7 +24,9 @@ const Header = ({ user, isHidden }) => {
       <OptionsContainer>
         <OptionLink to="/shop">Shop</OptionLink>
 
-        <OptionLink to="/contact">Contact</OptionLink>
+        <OptionDiv>
+          <a href="mailto:mcmbonu1@gmail.com">Contact</a>
+        </OptionDiv>
         {user ? (
           <OptionDiv onClick={() => auth.signOut()} to="/login">
             Log Out
